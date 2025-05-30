@@ -16,7 +16,9 @@ if "GOOGLE_API_KEY" not in os.environ:
     os.environ["GOOGLE_API_KEY"] = getpass.getpass("Enter your Google AI API key: ")
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-pdf_path = os.path.join(script_dir, "docs/cs229_lectures/MachineLearning-Lecture01.pdf")
+pdf_path = os.path.join(
+    script_dir, '..', "docs/cs229_lectures/MachineLearning-Lecture01.pdf"
+)
 loader = PyPDFLoader(pdf_path)
 pages = loader.load()
 print(len(pages))
