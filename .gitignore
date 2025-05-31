@@ -164,3 +164,4 @@ cython_debug/
 pgdata/
 .DS_Store
 service-account-key.json
+chroma_db/
