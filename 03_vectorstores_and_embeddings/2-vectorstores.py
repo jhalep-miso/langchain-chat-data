@@ -12,7 +12,7 @@ if "GOOGLE_API_KEY" not in os.environ:
     os.environ["GOOGLE_API_KEY"] = getpass.getpass("Enter your Google AI API key: ")
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-get_path = lambda x: os.path.join(script_dir, '..', x)
+get_path = lambda x: os.path.abspath(os.path.join(script_dir, '..', x))
 
 # Load PDF
 loaders = [
@@ -73,4 +73,3 @@ question = "what did they say about regression in the third lecture?"
 docs = vectordb.similarity_search(question, k=5)
 for doc in docs:
     print(doc.metadata)
-
